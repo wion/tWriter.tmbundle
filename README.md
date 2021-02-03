@@ -36,7 +36,7 @@ First, download and install on your machine the [iA Writer Duospace](https://www
 
 Then, when working on a .textile document, make the following configurations via the View menu:
 
-1. **View > Font > Show Fonts**, then set:
+1. **View > Font > Show Fonts**...
    * Collecton: Fixed Width
    * Family: iA Writer Duospace
    * Typeface: Regular
@@ -48,11 +48,9 @@ Finally, you may find that dragging the application's window to at least 80% of 
 
 Combined with one of the tWriter themes, the above configuration is a pretty good approximation of the iA Writer aesthetic. Unfortunately, TextMate does not provide any means for controlling left and right margins inside the editing window.
 
-Likewise, the one [hidden setting](https://github.com/textmate/textmate/wiki/Hidden-Settings) to control line height, `fontAscentDelta`, does not seem to work for this author. Try it yourself and see if you have better luck.
+Likewise, the one [hidden setting](https://github.com/textmate/textmate/wiki/Hidden-Settings) to control line height, `fontAscentDelta`, does not seem to work for this author. Try it yourself and see if you have better luck...
 
-For example…
-
-Close TextMate, then run the command:
+Close TextMate, then run the following command ('1.5' is the line height value, use the value you want; 1.3, 1.7, 2, whatever):
 
 ```
 defaults write com.macromates.TextMate fontAscentDelta 1.5
@@ -60,9 +58,7 @@ defaults write com.macromates.TextMate fontAscentDelta 1.5
 
 Open TextMate again.
 
-That will supposedly apply a line height of ‘1.5’ in TextMate. You can change it to 1.3, 1.7, 2, or whatever you want by closing TextMate again and running the command with the new value. 
-
-You can verify what line height might be set by running:
+That will supposedly apply a line height in TextMate for the value you set. You can verify what line height might be set by running:
 
 ```
  defaults read com.macromates.TextMate fontAscentDelta
