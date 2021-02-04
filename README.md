@@ -58,11 +58,6 @@ The iA Writer application was designed with reading and text comprehension in mi
 
 In web design, the above text usability factors are easily dealt with by picking a sensible font and controlling layout and behaviour via CSS, whether or not most designers or site owners make the effort. For example, it is possible to create a font-size to line-length ratio in desktop conditions that stays the same no matter what width a user drags their browser window to, or to set a max width on line length so font size does not get comically large. This may not be possible in client applications (don't know), but iA Writer somewhat handles it by using margins in the window stage, ensuring a max width on line lengths no matter how wide the application window is expanded, and allows font sizing adjustments *indirectly* by way of changing the number of characters per line only. Otherwise, font characteristics and line height are not editable; they are part of the editor’s design according to sensible usability; there's no direct, needless manipulation of them.
 
-<<<<<<< Updated upstream
-Likewise, the one [hidden setting](https://github.com/textmate/textmate/wiki/Hidden-Settings) to control line height, `fontAscentDelta`, does not seem to work for this author. Try it yourself and see if you have better luck...
-
-Close TextMate, then run the following command ('1.5' is the line height value, use the value you want; 1.3, 1.7, 2, whatever):
-=======
 TextMate, on the other hand, is quite different. There is no optimal font size, line height, or specific font family fixed in place. That's understandable for the type of editor it is, a code editor, and who it is for, coders. But the one manner in which it does allow control over line length—by way of the wrap column and soft wrap controls—is either terribly confusing or very buggy, its hard to know which. And here is why...
 
 You may notice after making the above recommended configurations in TextMate for this bundle's themes that even though you have set a soft wrap at width of window, there is still some horizontal scrolling inside the stage due to text moving past the right side of the stage. If you drag the application window to about 80% of your screen width (e.g. on 13-inch laptop screen), the scrolling is reduced to a manageable level, but the stage still jumps around as you type and reach ends of lines, and that is annoying. The only way for the scrolling to go away is to expand the window full screen, but then line lengths are ridiculously long because there is no way to control text margins.
@@ -74,7 +69,6 @@ If anyone knows why this scrolling happens under these conditions, or knows how 
 Line height in TextMate can supposedly be set by way of a [hidden setting](https://github.com/textmate/textmate/wiki/Hidden-Settings), `fontAscentDelta`. But it does not seem to work for this author. Try it yourself and see if you have better luck.
 
 You are recommended to first close TextMate. Then run the following command, where `1.5` is the line height value, though you can use whatever value you want (`1.3`, `1.7`, `2`, etc.):
->>>>>>> Stashed changes
 
 ```
 defaults write com.macromates.TextMate fontAscentDelta 1.5
