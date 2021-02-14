@@ -21,6 +21,12 @@
 				<string>#1a1a1a</string>
 				<key>caret</key>
 				<string>#ccc</string>
+				<key>fontFamily</key>
+				<string>iA Writer Duo S</string>
+				<key>fontName</key>
+				<string>iA Writer Duo S</string>
+				<key>fontSize</key>
+				<string>18pt</string>
 				<key>foreground</key>
 				<string>#ccc</string>
 				<key>invisibles</key>
@@ -139,6 +145,8 @@
 			<dict>
 				<key>background</key>
 				<string>#242424</string>
+				<key>fontName</key>
+				<string>iA Writer Mono S</string>
 			</dict>
 		</dict>
 		<dict>

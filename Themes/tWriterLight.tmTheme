@@ -19,6 +19,10 @@
 				<string>#f7f7f7</string>
 				<key>caret</key>
 				<string>#000</string>
+				<key>fontName</key>
+				<string>iA Writer Duo S</string>
+				<key>fontSize</key>
+				<string>18pt</string>
 				<key>foreground</key>
 				<string>#1a1a1a</string>
 				<key>invisibles</key>
@@ -115,6 +119,8 @@
 			<dict>
 				<key>background</key>
 				<string>#eee</string>
+				<key>fontName</key>
+				<string>iA Writer Mono S</string>
 			</dict>
 		</dict>
 		<dict>
