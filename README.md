@@ -1,143 +1,102 @@
-# tWriter for Textile Authors
+# tWriter: A Textile Bundle for Prose
 
-The tWriter bundle is an extended [Textile language](https://github.com/textile) bundle for [TextMate 2](https://macromates.com/). It is specifically meant for people who use [Textpattern CMS](https://textpattern.com) for personal web publishing, love the usability of [iA Writer](https://ia.net/writer) as a simple prose development application, but prefer Textile over Markdown. To that end, tWriter comes with its own monochrome themes, light and dark, modelled after the iA Writer experience.
+The tWriter bundle is an extended [Textile language](https://github.com/textile) bundle for [TextMate 2](https://macromates.com/). It is meant for people who want a better experience with Textile when writing and editing prose for web publication. Users of [Textpattern CMS](https://textpattern.com) will especially find it beneficial. The overall aesthetic is modelled after the usability of [iA Writer](https://ia.net/writer). To that end, tWriter comes with its own monochrome themes, light and dark, modelled after the iA Writer experience.
 
-The Textile grammar is extended beyond what the standard Textile bundle for TextMate provides; it accounts for more of the contemporary Textile syntax used in [php Textile](https://github.com/textile/php-textile), which is supported natively in Textpattern. Such syntax accounts for content features like block quotes, endnotes (advanced footnotes), and more complex table structures. The grammar also pulls out a few embedded wrapping pairs that were handled a little too generically in the standard version; whether or not an author may really need them, they are now more visually recognizable.
+## Differences from the Standard Textile Bundle
 
-The tWriter bundle also changes many of the menu actions that come in the standard Textile bundle; removing those for basic Textile and (eventually) adding some new ones for the more advanced elements.
+The Textile grammar in the tWriter bundle is extended beyond what the standard Textile bundle for TextMate provides; it accounts for more of the contemporary Textile syntax used in [php Textile](https://github.com/textile/php-textile), which is supported natively in Textpattern. That Textile includes syntax for block quotes, endnotes (advanced footnotes), and more complex table structures. The grammar also pulls out a few embedded wrapping pairs that were handled generically in the standard version. They are now more visually recognizable, whether or not an author may need them.
 
-Finally, the themes include scopes for [Textpattern’s own tag language](https://github.com/wion/textpattern.tmbundle), txp, so that draft articles destined for Textpattern CMS can include such markup and have it treated visually with the same monochrome colour as Textile; that is, full separation of all language syntax from text prose.
+The tWriter bundle also *excludes* many of the basic menu actions in the standard Textile bundle, deemed pointless for experienced Textile users. New actions for the more advanced Textile syntax may be added eventually.
 
-# Work in Progress
+Themes may eventually include scopes for Textpattern’s own tag language, txp, though such syntax is already effectively scoped by standard HTML scopes, thus greyed out from regular text, as intended.
 
-The author is not a developer, not even close, and [TextMate documentation](https://github.com/textmate/textmate/wiki) is deplorable for such a state of mind. So Issues will be created for things the author would like to do but does not know how, or can't figure out after too much time trying. Anyone with insights to solving those issues is more than welcome to chime in.
+## Installation
 
-The author does not expect this to be a perpetual work-in-progress, though, so once it gets to the point of _good enough for the author’s liking_, which is not far away, that will probably be it. Also, progress will be slow, probably.
+Since this is an extended bundle for a language already available within TextMate by default (the standard bundles), you might want to deactivate, uncheck, turn off the standard Textile bundle via the Bundles index at **TextMate > Preferences > Bundles > [Languages]**. This ensures you do not have duplicate Textile bundles in your application lists confusing you needlessly.
 
-This section of the ReadMe will disappear when the bundle has reached the author’s _good enough_ point.
-
-# Installation
-
-Since this is an extended bundle for a language already provided in TextMate by default, you might want to deactivate, uncheck, turn off the standard Textile bundle in TextMate via the Bundles index at **TextMate > Preferences > Bundles > [Languages]**. This ensures you do not have duplicate Textile bundles in your application lists confusing you needlessly.
-
-The tWriter bundle should be added to the /Bundles directory at:
+Then, whether sourced from a .zip package or cloned from a repository,  the tWriter bundle should be added to the /Bundles directory at:
 
 ```
 ~/Library/Application\ Support/TextMate/Bundles
-```
+``` 
 
-Done.
+## Setup
 
-Open TextMate and find ’tWriter’ available under the Bundles menu and in the bundles editor list. It will appear as ‘Textile’ in the language selector options at bottom of window chrome because the grammar file is still named ‘Textile’. If you prefer seeing ‘Textile’ consistently throughout, edit the name in the info.plist file. 
+The bundle and themes by themselves do not (and cannot by TextMate design) provide the full iA Writer experience. You need to nudge it a little further by doing the following.
 
-# The iA Writer Experience
+### Install the iA Writer Fonts
 
-When using tWriter, it is sensible to deactivate the Themes bundle at **TextMate > Preferences > Bundles > [Themes]**. This will leave only the 'tWriter Light' and 'tWriter Dark' themes in the themes options at **View > Themes > [theme]**. Again, the tWriter bundle was designed for these themes, so eliminating the unusable standard options from the menu is practical. Or, you can always customize a theme against tWriter’s grammar.
+Using the iA Writer fonts, [Mono, Duo, and Quattro](https://ia.net/writer/blog/a-typographic-christmas), is a critical part of recreating the iA Writer experience through tWriter. The fonts are made available from the [iA-Fonts](https://github.com/iaolo/iA-Fonts) repository, but the specific .ttf files for application use are conveniently included in the bundle at `tWriter.tmbundle/Support/Fonts/iAWriter.zip`. The font license sits next to the .zip file.
 
-The tWriter themes will not give you the full iA Writer experience by themselves. You should also do the following if you want to go further with it.
+Put all twelve .ttf files into `~/Library/Fonts`. The quickest way to do that, perhaps, is copy and run the following five commands in series:
 
-## Stage Configuration
+1. `cd ~/Library/Application\ Support/TextMate/Bundles/tWriter.tmbundle/Support/Fonts`
+2. `mv iAWriter-fonts.zip ~/Library/Fonts`
+3. `cd ~/Library/Fonts`
+3. `unzip iAWriter-fonts.zip`
+4. `rm -R iAWriter-fonts.zip`
 
-First, download and install on your machine the [iA Writer Duospace](https://www.fontsquirrel.com/fonts/ia-writer-duospace) family.
+Duo is the base editing font. Mono is for displayed and embedded code examples. Quattro, a typewriter-like font with proportional qualities, will be used in a modified Preview window for the bundle, but that is still to come. You might as well have the font installed and ready. 
 
-Then, when working on a .textile document, make the following configurations via the View menu:
+### Configure the View
 
-1. **View > Font > Show Fonts**...
-   * Collecton: Fixed Width
-   * Family: iA Writer Duospace
-   * Typeface: Regular
-   * Size: 18
-2. **View > Enable Soft Wrap**
-3. **View > Wrap Column > Use Window Frame**
+Make the following configurations via the View menu of TextMate:
 
-Combined with one of the tWriter themes, the above configuration is a pretty good approximation of the iA Writer aesthetic under the constraints of TextMate, with the exception of one real problem: controlling a usable, readable line length in relation to text.
+1. View > **Enable Soft Wrap**
+2. View > Wrap Column > **Use Window Frame**
+3. View > **Hide Line Numbers** (optional)
 
-## Line Length Problem
+That last one is subjective. You won't find line numbers in iA Writer, nor any distracting gutter at all. A gutter remains in TextMate, however, even if line numbers or hidden.
 
-The iA Writer application was designed with reading and text comprehension in mind, therefore making it an ideal application for developing prose instead of code. To see this, one needs to consider some of the many usability studies over the past three decades on reading/comprehension in digital screens. Paul Olyslager offers a good [summation of the main text factors influencing reading comprehension](https://www.paulolyslager.com/optimal-text-layout-line-length/), which are line length, font size, characters per line, letter spacing, and interlinear spacing (i.e. line height).
+Be aware that fonts and font size are controlled via the tWriter themes. There is no need to mess with font settings under View > Font > Show Fonts.
 
-In web design, the above text usability factors are easily dealt with by picking a sensible font and controlling layout and behaviour via CSS, whether or not most designers or site owners make the effort. For example, it is possible to create a font-size to line-length ratio in desktop conditions that stays the same no matter what width a user drags their browser window to, or to set a max width on line length so font size does not get comically large. This may not be possible in client applications (don't know), but iA Writer somewhat handles it by using margins in the window stage, ensuring a max width on line lengths no matter how wide the application window is expanded, and allows font sizing adjustments *indirectly* by way of changing the number of characters per line only. Otherwise, font characteristics and line height are not editable; they are part of the editor’s design according to sensible usability; there's no direct, needless manipulation of them.
+But, so you know, if you look in font settings, you will see that 'iA Writer Duo S' is selected at size 18 (point). It is reading what is defined in the themes. You could override that by changing font settings under the View menu, but that defeats the point of using the tWriter bundle.
 
-TextMate, on the other hand, is quite different. There is no optimal font size, line height, or specific font family fixed in place. That's understandable for the type of editor it is, a code editor, and who it is for, coders. But the one manner in which it does allow control over line length—by way of the wrap column and soft wrap controls—is either terribly confusing or very buggy, its hard to know which. And here is why...
+### Set Interlinear Spacing
 
-You may notice after making the above recommended configurations in TextMate for this bundle's themes that even though you have set a soft wrap at width of window, there is still some horizontal scrolling inside the stage due to text moving past the right side of the stage. If you drag the application window to about 80% of your screen width (e.g. on 13-inch laptop screen), the scrolling is reduced to a manageable level, but the stage still jumps around as you type and reach ends of lines, and that is annoying. The only way for the scrolling to go away is to expand the window full screen, but then line lengths are ridiculously long because there is no way to control text margins.
+Interlinear spacing is effectively line height, though established a little differently in client applications than web documents. In iA Writer interlinear spacing is a function of line length, set as characters per line.
 
-If anyone knows why this scrolling happens under these conditions, or knows how to set margins in the stage, please chime in.  
+In TextMate there is no interlinear spacing (appealing to coders, presumably), which is the same as saying a line heigh of 1. But TextMate's developer was kind enough to provide two [hidden keys](https://github.com/textmate/textmate/wiki/Hidden-Settings), `fontLeadingDelta` and `fontAscentDelta`, for replicating line height. The former controls space above a line, while the latter controls space below a line.
 
-## Line Height
+The `defaults` shell application is used to set or change values for these keys; specifically, the `write` or `delete` commands will be used in relation to the application's `com.macromates.TextMate` domain. The values must be set as either floating point numbers (i.e. decimal numbers: 1.3, 1.5, 1.7...) or as integers (i.e. whole numbers: 1, 2, 3...), and for that the `-float` and `-integer` properties are used, respectively (e.g. `-float 1.5`, or `-integer 3`).
 
-Line height in TextMate can supposedly be set by way of a [hidden setting](https://github.com/textmate/textmate/wiki/Hidden-Settings), `fontAscentDelta`. But it does not seem to work for this author. Try it yourself and see if you have better luck.
+I found that a floating point value of `3.7` for both keys establishes iA Writer's interlinear spacing perfectly on my 13-inch laptop when characters per line in iA Writer is set at 72.
 
-You are recommended to first close TextMate. Then run the following command, where `1.5` is the line height value, though you can use whatever value you want (`1.3`, `1.7`, `2`, etc.):
-
-```
-defaults write com.macromates.TextMate fontAscentDelta 1.5
-```
-
-Open TextMate again.
-
-That will supposedly apply a line height in TextMate for the value you set. You can verify what line height might be set by running:
+So, if you are inclined to edit the interlinear spacing for a better fit with the iA Writer aesthetic, **first quit TextMate**, then copy, paste, and run the following chained `write` commands:
 
 ```
- defaults read com.macromates.TextMate fontAscentDelta
+defaults write com.macromates.TextMate fontLeadingDelta -float 3.7 && defaults write com.macromates.TextMate fontAscentDelta -float 3.7
 ```
 
-Or delete a set value by running:
+Open TextMate again to find the interlinear spacing looking a lot more like that in iA Writer.
+
+You can delete the *leading* and *ascent* values and return to a default state by **quitting TextMate again**, then running the following for @delete@:
 
 ```
-defaults delete com.macromates.TextMate fontAscentDelta
+defaults delete com.macromates.TextMate fontLeadingDelta && defaults delete com.macromates.TextMate fontAscentDelta
 ```
 
-Even if you do not succeed in setting a slightly taller line height, as appears in iA Writer, the themes and View configurations still look pretty close, barring the line length problem mentioned previously.
-
-# Muse: Application Level Customization
-
-Although not the goal here, the idea of converting TextMate to a veritable iA Writer for Textile, by way of TextMate’s unique and flexible bundles, does make for curious reflection. 
-
-Olyslager, mentioned earlier, also points out that text layout is another factor influencing reading comprehension, though more so in web and print media design, where other content elements and bullshit advertising might mix in.
-
-In the case of text editors, this is not a problem, though we could consider differences in chrome design, and TextMate might score *busier* in that case due to features like the left-side gutter (for line numbers) and tabbed panes (when used), but these are not impacts on reading and comprehension in the stage.
-
-Nevertheless, could they be changed, if wanted? If one were so inclined to try customizing TextMate into a veritable mimic of iA Writer but for Textile instead of Markdown, could the following be done:
-
-* Restructure the application menus as they exist in iA Writer
-* modify window chrome (e.g. removing the gutter, and whatever)
-* Customize stage and associated preferences to improve line length control (i.e. line margins and character per line control)
-* Include iA Writer’s specific Focus menu functionality— focus mode, parts of speech highlighting, and style checker—in TextMate’s unique way, via bundles.
-
-An insane amount of work, yes, even if it could be done, but it would be the only option on the market that has the usability of iA Writer but for support of Textile. Besides only five people wanting it, why does that editor not exist?
-
-Such a conversion would mean letting go of TextMate as a code editor, dropping all the other standard language bundles and themes that can be used. They would not make sense in a mimic of iA Writer for Textile.
-
-If any skilled developer tries to go down that path, please let this author know what repository to follow.
-
-# Resetting TextMate
-
-For the rest of us, TextMate can be reset to its initial default state by clearing a few locations. Make sure to backup custom bundles first (or reinstall them from source). Then run the following commands.
-
-This one removes the /Bundles directory, thereby clearing out all custom bundles, and delta files for standard bundles, in one shot:
+And if you ever forget what you might have set, or not, you can run the following `read` commands, respectively, without having to quit TextMate first (since you are not changing any values here):
 
 ```
-rm -R ~/Library/Application\ Support/Textmate
+defaults read com.macromates.TextMate fontLeadingDelta
 ```
 
-This next command removes any preferences that TextMate may have set in the course of you editing bundles, configuring the View, and so forth:
-
 ```
-rm -R ~/Library/Preferences/com.macromates.*
+defaults read com.macromates.TextMate fontAscentDelta
 ```
 
-And this last command ensures any cached files or links are removed that may have been tied with any previous custom conditions:  
+### Establish Desired Line Length
 
-```
-rm -R ~/Library/Caches/com.macromates.TextMate
-```
+Line length in iA Writer by default is a nice 12 to 15 words per line when characters per line is set at 72, so that is the initial target here.
+ 
+There are two ways to get that usable line length in TextMate. The easy and recommended way (what the author uses) is to drag the window to a width of about 12 to 15 words per line on average. You’ll find there is still a little scrolling in the stage even though the soft wrap is set to wrap at window frame. This is a TextMate bug, apparently, but the scrolling is minor and you get used to it fast.
 
-Not all locations may have anything to remove, but it's okay to run the commands to make sure.
+The other way is to expand the window full screen, and change the soft wrapping from the window frame to a column width value of 72. There is no horizontal scrolling this way, but text in the resulting display is shifted left in the expanded window, which is not an iA Writer experience by any means. There is also another bug (or a different manifestation of the same bug) when going back to a non-expanded window width and wrapping at the window frame again. The stage retains the memory of the column width in the expanded distance and makes the scrolling problem a lot worse. The compounded scrolling can be eliminated by starting a new document tab (which puts you in it automatically), then clicking back to the draft again. The compounded scrolling will magically disappear.
 
-# License
+## License
 
-This bundle maintains the license of the bundle from which it started, the [standard TextMate bundle for Textile](https://github.com/textmate/textile.tmbundle)...
+This bundle maintains the license of the [standard TextMate bundle for Textile](https://github.com/textmate/textile.tmbundle), as follows…
 
 If not otherwise specified (see at bottom), files in this repository fall under the following license:
 
@@ -146,4 +105,4 @@ If not otherwise specified (see at bottom), files in this repository fall under 
 	express or implied warranty, and with no claim as to its
 	suitability for any purpose.
 
-An exception is made for files in readable text which contain their own license information, or files where an accompanying file exists (in the same directory) with a “-license” suffix added to the base-name name of the original file, and an extension of txt, html, or similar. For example “tidy” is accompanied by “tidy-license.txt”.
+An exception is made for files in readable text which contain their own license information, or files where an accompanying file exists (in the same directory) with a “-license” suffix added to the base-name name of the original file, and an extension of .txt. For example, the iA Writer fonts are accompanied by ‘iAWriter-fonts-license.txt”.
