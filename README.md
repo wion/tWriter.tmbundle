@@ -1,14 +1,28 @@
 # tWriter: A Textile Bundle for Prose
 
-The tWriter bundle is an extended [Textile language](https://github.com/textile) bundle for [TextMate 2](https://macromates.com/). It is meant for people who want a better experience with Textile when writing and editing prose for web publication. Users of [Textpattern CMS](https://textpattern.com) will especially find it beneficial. The overall aesthetic is modelled after the usability of [iA Writer](https://ia.net/writer). To that end, tWriter comes with its own monochrome themes, light and dark, modelled after the iA Writer experience.
+The tWriter bundle is an extended [Textile language](https://github.com/textile) bundle for [TextMate 2](https://macromates.com/). It is meant for people who want a better experience with Textile when writing and editing prose for web publication. Users of [Textpattern CMS](https://textpattern.com) will especially find it beneficial. The overall aesthetic is modelled after the usability of [iA Writer](https://ia.net/writer). To that end, tWriter comes with its own monochrome themes, light and dark, modelled after the iA Writer experience. A few examples follow.
+
+Some basic formatting, and note the consistent grey out handling of Textpattern syntax (regular HTML is treated the same way). No rainbows needed when all you are trying to do is write prose.
+
+![tWriter basic formatting](https://wion.com/assets/images/temp/tWriter-format.png)
+
+And links are finally like iA Writer links; the Textile syntax is present but standing back from regular text, like a *humane* syntax should do. Dark theme here…
+
+![iA Writer-like Textile links](https://wion.com/assets/images/temp/tWriter-links-dark.png)
+
+And some of the new syntax here showing displayed and embedded quotations and code. Note the smaller size on displayed quotations…
+
+![tWriter quotes and code](https://wion.com/assets/images/temp/tWriter-quotes-code.png)
+
+And the endnotes handling, which also reduces size on the notes…
+
+![tWriter endnotes](https://wion.com/assets/images/temp/tWriter-notes-dark.png)
 
 ## Differences from the Standard Textile Bundle
 
-The Textile grammar in the tWriter bundle is extended beyond what the standard Textile bundle for TextMate provides; it accounts for more of the contemporary Textile syntax used in [php Textile](https://github.com/textile/php-textile), which is supported natively in Textpattern. That Textile includes syntax for block quotes, endnotes (advanced footnotes), and more complex table structures. The grammar also pulls out a few embedded wrapping pairs that were handled generically in the standard version. They are now more visually recognizable, whether or not an author may need them.
+The Textile grammar in the tWriter bundle is modified from, and extended beyond, what the standard Textile bundle for TextMate provides. As depicted above, it accounts for more of the contemporary Textile syntax used in [php Textile](https://github.com/textile/php-textile), which is supported natively in Textpattern. That Textile includes syntax for block quotes, endnotes (advanced footnotes), and (eventually) more complex table structures. Other changes here and there, too.
 
 The tWriter bundle also *excludes* many of the basic menu actions in the standard Textile bundle, deemed pointless for experienced Textile users. New actions for the more advanced Textile syntax may be added eventually.
-
-Themes may eventually include scopes for Textpattern’s own tag language, txp, though such syntax is already effectively scoped by standard HTML scopes, thus greyed out from regular text, as intended.
 
 ## Installation
 
