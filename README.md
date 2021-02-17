@@ -1,6 +1,8 @@
 # tWriter: A Textile Bundle for Prose
 
-The tWriter bundle is an extended [Textile language](https://github.com/textile) bundle for [TextMate 2](https://macromates.com/). It is meant for people who want a better experience with Textile when writing and editing prose for web publication. Users of [Textpattern CMS](https://textpattern.com) will especially find it beneficial. The overall aesthetic is modelled after the usability of [iA Writer](https://ia.net/writer). To that end, tWriter comes with its own monochrome themes, light and dark, modelled after the iA Writer experience. A few examples follow.
+The tWriter bundle is an extended [Textile language](https://github.com/textile) bundle for [TextMate 2](https://macromates.com/). It is meant for people who want a better experience with Textile when writing and editing prose for web publication. Users of [Textpattern CMS](https://textpattern.com) will especially find it beneficial. The overall aesthetic is modelled after the usability of [iA Writer](https://ia.net/writer). To that end, tWriter comes with its own light and dark themes, modelled after the greyscale-like iA Writer experience.
+
+A few examples of the visual effect for various uses of Textile follow below. (You can find more in the [closed issues](https://github.com/wion/tWriter.tmbundle/issues?q=is%3Aissue+is%3Aclosed) for grammar scopes as they are changed or added.)
 
 Some basic formatting, and note the consistent grey out handling of Textpattern syntax (regular HTML is treated the same way). No rainbows needed when all you are trying to do is write prose.
 
