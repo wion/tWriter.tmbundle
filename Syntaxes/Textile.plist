@@ -366,46 +366,45 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>string.other.link.title.textile</string>
+							<string>punctuation.definition.constant.textile</string>
+						</dict>
+						<key>10</key>
+						<dict>
+							<key>name</key>
+							<string>markup.underline.link.textile</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>string.other.link.description.title.textile</string>
+							<string>entity.name.type.textile</string>
 						</dict>
-						<key>3</key>
+						<key>4</key>
 						<dict>
 							<key>name</key>
-							<string>constant.other.reference.link.textile</string>
+							<string>string.other.link.title.textile</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>9</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.constant.textile</string>
 						</dict>
 					</dict>
 					<key>match</key>
 					<string>(?x)
-						# Starting link punctuation
-						"
-							# Optional attributes
-							(?:
-								# Class, Style, Lang
-								(?:\([^)]+\))?(?:\{[^}]+\})?(?:\[[^\]]+\])?
-								# Style, Lang, Class
-								| (?:\{[^}]+\})?(?:\[[^\]]+\])?(?:\([^)]+\))?
-								# Lang, Style, Class
-								| (?:\[[^\]]+\])?(?:\{[^}]+\})?(?:\([^)]+\))?
-							)?
-							# Link text string
-							([^"]+?) 
-							# Optional whitespace
-							\s?	
-							# Optional title string
-							(?:\(([^)]+?)\))?
-						# Ending link punctuation
-						":	
-						# Linkref
-						(\w[-\w_]*)
-						# Catch closing punctuation
-						(?=[^\w\/;]*?(&lt;|\s|$))	
-					#  End of link
-					</string>
+				(")								# (1) Punctuation start
+				((\([^)]*\)|\[[^]]+\]){0,2})	# (2)(3) Attributes (styles dropped)
+				([^"]+?)						# (4) Link text string
+				\s?								# Optional whitespace
+				((\()([^)]+?)(\)))?				# (5)(6)(7)(8)Title/description			
+				(":)							# (9) Punctuation end
+				(\w[-\w_]*)					# (10) Link-ref
+				(?=[^\w\/]*?(&lt;|\s|$))			# (11)(12) capture
+				</string>
 					<key>name</key>
 					<string>meta.link.reference.textile</string>
 				</dict>
@@ -415,46 +414,45 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>string.other.link.title.textile</string>
+							<string>punctuation.definition.constant.textile</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>string.other.link.description.title.textile</string>
-						</dict>
-						<key>3</key>
+						<key>10</key>
 						<dict>
 							<key>name</key>
 							<string>markup.underline.link.textile</string>
 						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>string.other.link.title.textile</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>9</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.constant.textile</string>
+						</dict>
 					</dict>
 					<key>match</key>
 					<string>(?x)
-						# Starting link punctuation
-						"	
-							# Optional attributes
-							(?:	
-								# Class, Style, Lang
-								(?:\([^)]+\))?(?:\{[^}]+\})?(?:\[[^\]]+\])?
-								# Style, Lang, Class
-								| (?:\{[^}]+\})?(?:\[[^\]]+\])?(?:\([^)]+\))? 
-								# Lang, Style, Class
-								| (?:\[[^\]]+\])?(?:\{[^}]+\})?(?:\([^)]+\))? 
-							)?
-							# Link text string
-							([^"]+?)
-							# Optional whitespace
-							\s?
-							# Optional title string
-							(?:\(([^)]+?)\))?
-						# Ending link punctuation
-						":	
-						# URL
-						(\S*?(?:\w|\/|;)) 
-						# Trailing punctuation
-						(?=[^\w\/;]*?(&lt;|\s|$))			
-					# End of link
-					</string>
+			(")								# (1) Punctuation start
+			((\([^)]*\)|\[[^]]+\]){0,2})	# (2)(3) Attributes (styles dropped)
+			([^"]+?)						# (4) Link text string
+			\s?								# Optional whitespace
+			((\()([^)]+?)(\)))?				# (5)(6)(7)(8)Title/description
+			(":)							# (9) Punctuation end
+			(\S*?(?:\w|\/|;))				# (10) Link-ref
+			(?=[^\w\/]*?(&lt;|\s|$))			# (11)(12) capture
+			</string>
 					<key>name</key>
 					<string>meta.link.inline.textile</string>
 				</dict>
@@ -479,37 +477,23 @@
 					</dict>
 					<key>match</key>
 					<string>(?x)
-						# Open image
-						\!
-							# Optional alignment
-							(\&lt;|\=|\&gt;)?	
-							# Attributes
-							(?: 
-								# Class, Style, Lang
-								(?:\([^)]+\))?(?:\{[^}]+\})?(?:\[[^\]]+\])?
-								# Style, Lang, Class
-								| (?:\{[^}]+\})?(?:\[[^\]]+\])?(?:\([^)]+\))?
-								# Lang, Style, Class		
-								| (?:\[[^\]]+\])?(?:\{[^}]+\})?(?:\([^)]+\))?
-							)?
-							# Optional
-							(?:\.[ ])? 
-							# Image URL
-							([^\s(!]+?) 
-							# Optional space
-							\s? 
-							# Optional title
-							(?:\(((?:[^\(\)]|\([^\)]+\))+?)\))? 
-						# Close image 
-						\! 
-						(?:
-							:
-							# URL
-							(\S*?(?:\w|\/|;))
-							# Catch closing punctuation 
-							(?=[^\w\/;]*?(&lt;|\s|$)) 
-						)?
-					</string>
+			\! 								# Open image
+			(\&lt;|\=|\&gt;)?						# Optional alignment
+			(?:								
+			(?:\([^)]+\))?(?:\[[^\]]+\])?	# Class, Lang
+			| (?:\[[^\]]+\])?(?:\([^)]+\))?	# Lang, Class
+			)?
+			(?:\.[ ])?						# Optional
+			([^\s(!]+?)						# Image URL
+			\s?								# Optional space
+			(?:\(((?:[^\(\)]|\([^\)]+\))+?)\))?		# Optional title
+			\!								# Close image 
+			(?:
+			:
+			(\S*?(?:\w|\/|;))				# URL
+			(?=[^\w\/;]*?(&lt;|\s|$))			# Catch closing punctuation 
+			)?
+			</string>
 					<key>name</key>
 					<string>meta.image.inline.textile</string>
 				</dict>
@@ -530,7 +514,7 @@
 				<dict>
 					<key>captures</key>
 					<dict>
-						<key>3</key>
+						<key>2</key>
 						<dict>
 							<key>name</key>
 							<string>entity.name.type.textile</string>
@@ -551,7 +535,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?:\b|\s)(__?)((\([^)]*\)|{[^}]*}|\[[^]]*\]){0,3})(\S.*?\S|\S)\1(?:\b|\s)</string>
+					<string>(?:\b|\s)(__?)((\([^)]*\)|{[^}]*}|\[[^]]+\]){0,3})(\S.*?\S|\S)\1(?:\b|\s)</string>
 					<key>name</key>
 					<string>markup.italic.textile</string>
 				</dict>
@@ -584,23 +568,15 @@
 					<string>markup.inserted.textile</string>
 				</dict>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.type.textile</string>
-						</dict>
-					</dict>
 					<key>match</key>
-					<string>@((\([^)]*\)|{[^}]*}|\[[^]]+\]){0,3})(\S.*?\S|\S)@</string>
+					<string>@(\S.+?\S|\S)@</string>
 					<key>name</key>
 					<string>markup.code.textile</string>
 				</dict>
 				<dict>
 					<key>captures</key>
 					<dict>
-						<key>3</key>
+						<key>2</key>
 						<dict>
 							<key>name</key>
 							<string>entity.name.type.textile</string>
@@ -631,9 +607,9 @@
 					<key>comment</key>
 					<string>Escaped superscripts and subscripts</string>
 					<key>match</key>
-					<string>((?=\[(\^|~))\[)|((?&lt;=(\^|~))\])</string>
+					<string>((?=\[[@\^~%_\*])\[)|((?&lt;=[@\^~%_\*])\])</string>
 					<key>name</key>
-					<string>entity.name.tag.escaped.scripts.textile</string>
+					<string>entity.name.tag.escape.textile</string>
 				</dict>
 			</array>
 		</dict>
