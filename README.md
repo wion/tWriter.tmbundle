@@ -62,9 +62,7 @@ Make the following configurations via the View menu of TextMate:
 
 That last one is subjective. You won't find line numbers in iA Writer, nor any distracting gutter at all. A gutter remains in TextMate, however, even if line numbers or hidden.
 
-Be aware that fonts and font size are controlled via the tWriter themes. There is no need to mess with font settings under View > Font > Show Fonts.
-
-But, so you know, if you look in font settings, you will see that 'iA Writer Duo S' is selected at size 18 (point). It is reading what is defined in the themes. You could override that by changing font settings under the View menu, but that defeats the point of using the tWriter bundle.
+There is no need to mess with font settings under View > Font > Show Fonts. But, if you look in font settings, you will see that the ’iA Writer Duo S' font is selected at size 18 (point). It is reading what is defined in the themes. You could override that by changing font settings, but that defeats the point of the tWriter bundle.
 
 ### Set Interlinear Spacing
 
