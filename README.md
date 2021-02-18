@@ -14,7 +14,7 @@ Figure 2 shows links handling in a dark theme example. Yes, Textile links that a
 ![iA Writer-like Textile links](https://wion.com/assets/images/temp/tWriter-links-dark.png)
 **Figure 2. Links.**
 
-Figure 3 is to demonstrate displayed (block) and embedded (inline) quotations and code. Both of the displayed tags are missing in the standard Textile bundle, but you get them in tWriter. Note the smaller size on displayed quotations, which is using the style recommendation from the *Oxford Style Manual* for displayed quotations in published material. *Nota*, the `bc..` (issue #13) and `bq..` (issue #14) tags are not yet supported visually.
+Figure 3 demonstrates displayed (block) and embedded (inline) quotations and code. Both of the displayed tags are missing in the standard Textile bundle, but you get them in tWriter. Note the smaller size on displayed quotations, which is using the style recommendation from the *Oxford Style Manual* for displayed quotations in published material. The [multi-block code](https://github.com/wion/tWriter.tmbundle/issues/12) (`bc..`) and [multi-para quotation](https://github.com/wion/tWriter.tmbundle/issues/13) (`bq..`) tags are supported visually, too.
 
 ![tWriter quotes and code](https://wion.com/assets/images/temp/tWriter-quotes-code.png)
 **Figure 3. Quotations and code.**

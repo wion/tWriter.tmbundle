@@ -53,7 +53,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(^bq([&lt;&gt;=()]+)?)(\([^)]*\)|{[^}]*})*(\.)</string>
+			<string>(^bq([&lt;&gt;=()]+)?)(\([^)]*\)|{[^}]*})*(\.\.?)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -90,7 +90,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(^bc([&lt;&gt;=()]+)?)(\([^)]*\)|{[^}]*})*(\.)</string>
+			<string>(^bc([&lt;&gt;=()]+)?)(\([^)]*\)|{[^}]*})*(\.\.?)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
