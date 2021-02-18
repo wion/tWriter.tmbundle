@@ -1,24 +1,28 @@
 # tWriter: A Textile Bundle for Prose
 
-The tWriter bundle is an extended [Textile language](https://github.com/textile) bundle for [TextMate 2](https://macromates.com/). It is meant for people who want a better experience with Textile when writing and editing prose for web publication. Users of [Textpattern CMS](https://textpattern.com) will especially find it beneficial. The overall aesthetic is modelled after the usability of [iA Writer](https://ia.net/writer). To that end, tWriter comes with its own light and dark themes, modelled after the greyscale-like iA Writer experience.
+The tWriter bundle is an extended [Textile language](https://github.com/textile) bundle for [TextMate 2](https://macromates.com/). It is meant for people who want a better experience with Textile when writing and editing prose for web publication. Users of [Textpattern CMS](https://textpattern.com) will especially find it beneficial if the CMS’s Write panel editor has never been your favourite place to draft long-form.
 
-A few examples of the visual effect for various uses of Textile follow below. (You can find more in the [closed issues](https://github.com/wion/tWriter.tmbundle/issues?q=is%3Aissue+is%3Aclosed) for grammar scopes as they are changed or added.)
+The overall aesthetic is modelled after the usability of [iA Writer](https://ia.net/writer). To that end, tWriter comes with its own light and dark greyscale themes. A few examples of the visual effect for various uses of Textile follow. (You can find a few more images in the [closed issues](https://github.com/wion/tWriter.tmbundle/issues?q=is%3Aissue+is%3Aclosed) for grammar scopes as they are changed or added.)
 
-Some basic formatting, and note the consistent grey out handling of Textpattern syntax (regular HTML is treated the same way). No rainbows needed when all you are trying to do is write prose.
+Figure 1 shows some basic use of headings and inline formatting. All six heading levels look the same. Their tags and attributes, as with all other Textile tags/attributes, are greyed out. Note the consistent greyed-out handling of Textpattern syntax. Regular HTML is treated the same way (figure 3). Inaccessible code rainbows offer no help in writing prose. 
 
 ![tWriter basic formatting](https://wion.com/assets/images/temp/tWriter-format.png)
+**Figure 1. Headings, formatting, and alternate markup.**
 
-And links are finally like iA Writer links; the Textile syntax is present but standing back from regular text, like a *humane* syntax should do. Dark theme here…
+Figure 2 shows links handling in a dark theme example. Yes, Textile links that are finally treated like iA Writer links; the syntax is present but standing back from regular text, like a *humane* link syntax should do. Note the one ‘styles’ attribute is not captured. That is intentional on links. I may treat all Textile elements the same, because, like me, you probably never use inline styles (and should not, really), and the foreground colour on that attribute reminds you, like an ugly wart, to create the necessary CSS rules instead.
 
 ![iA Writer-like Textile links](https://wion.com/assets/images/temp/tWriter-links-dark.png)
+**Figure 2. Links.**
 
-And some of the new syntax here showing displayed and embedded quotations and code. Note the smaller size on displayed quotations…
+Figure 3 is to demonstrate displayed (block) and embedded (inline) quotations and code. Both of the displayed tags are missing in the standard Textile bundle, but you get them in tWriter. Note the smaller size on displayed quotations, which is using the style recommendation from the *Oxford Style Manual* for displayed quotations in published material. *Nota*, the `bc..` (issue #13) and `bq..` (issue #14) tags are not yet supported visually.
 
 ![tWriter quotes and code](https://wion.com/assets/images/temp/tWriter-quotes-code.png)
+**Figure 3. Quotations and code.**
 
-And the endnotes handling, which also reduces size on the notes…
+Figure 4 shows the endnotes handling in tWriter, which is another pair of tags not included in the standard Textile bundle. Note the notes here are also reduced in size, as you typically expect notes to be.
 
 ![tWriter endnotes](https://wion.com/assets/images/temp/tWriter-notes-dark.png)
+**Figure 4. Endnotes.**
 
 ## Differences from the Standard Textile Bundle
 
