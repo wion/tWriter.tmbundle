@@ -569,7 +569,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>@(\S.+?\S|\S)@</string>
+					<string>((?=@)\S.+?\S(?&lt;=@))</string>
 					<key>name</key>
 					<string>markup.code.textile</string>
 				</dict>
@@ -605,7 +605,7 @@
 				</dict>
 				<dict>
 					<key>comment</key>
-					<string>Escaped superscripts and subscripts</string>
+					<string>Escape brackets</string>
 					<key>match</key>
 					<string>((?=\[[@\^~%_\*])\[)|((?&lt;=[@\^~%_\*])\])</string>
 					<key>name</key>
