@@ -184,28 +184,6 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Markup: Table Elements</string>
-			<key>scope</key>
-			<string>markup.other.table.caption.textile, markup.other.table.head.textile, markup.other.table.foot.textile</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#b0b0b0</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markup: Table Cells</string>
-			<key>scope</key>
-			<string>markup.other.table.head.textile, markup.other.table.cell.textile</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string></string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
 			<string>Markup: Deleted</string>
 			<key>scope</key>
 			<string>markup.deleted.textile</string>
