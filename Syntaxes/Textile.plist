@@ -233,43 +233,6 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(^table([&lt;&gt;=()]+)?)(\([^)]*\)|{[^}]*})*(\.)</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.table.textile</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.type.textile</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.table.textile</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>^$</string>
-			<key>name</key>
-			<string>markup.other.table.textile</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#inline</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>text.html.basic</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>begin</key>
 			<string>^(?=\S)</string>
 			<key>end</key>
 			<string>^$</string>
@@ -338,6 +301,203 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
+							<string>entity.name.tag.table.textile</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.textile</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(^table([&lt;&gt;=()]+)?)(\([^)]*\)|{[^}]*})*(\.)</string>
+					<key>name</key>
+					<string>markup.table.textile</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.caption.textile</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.caption.textile</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\|=)(\.)\s</string>
+					<key>name</key>
+					<string>markup.table.caption.textile</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.head.textile</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.head.textile</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\|\^)(\([^)]*\))?(\.)</string>
+					<key>name</key>
+					<string>markup.table.head.textile</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.body.textile</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.body.textile</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\|-)(\([^)]*\))?(\.)</string>
+					<key>name</key>
+					<string>markup.table.body.textile</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.foot.textile</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.foot.textile</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\|~)(\([^)]*\))?(\.)</string>
+					<key>name</key>
+					<string>markup.table.foot.textile</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.header.textile</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.header.textile</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\|_)(\\\d+)?(\.)</string>
+					<key>name</key>
+					<string>markup.table.header.textile</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\|)(_?(\\\d+))(\.)</string>
+					<key>name</key>
+					<string>markup.table.row.span.textile</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.row.data.textile</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.table.row.data.textile</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\|\s)|(\s\|\s)|(\s\|)</string>
+					<key>name</key>
+					<string>markup.table.row.data.textile</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
 							<string>entity.name.type.textile</string>
 						</dict>
 					</dict>
@@ -395,7 +555,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(?x)
+					<string>(?x)				# (Free-spacing mode)
 				(")								# (1) Punctuation start
 				((\([^)]*\)|\[[^]]+\]){0,2})	# (2)(3) Attributes (styles dropped)
 				([^"]+?)						# (4) Link text string
@@ -496,20 +656,6 @@
 			</string>
 					<key>name</key>
 					<string>meta.image.inline.textile</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.type.textile</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>\|(\([^)]*\)|{[^}]*})*(\\\||.)+\|</string>
-					<key>name</key>
-					<string>markup.other.table.cell.textile</string>
 				</dict>
 				<dict>
 					<key>captures</key>
