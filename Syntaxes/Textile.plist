@@ -361,6 +361,20 @@
 							<key>name</key>
 							<string>entity.name.type.textile</string>
 						</dict>
+					</dict>
+					<key>match</key>
+					<string>\s?(\([^)]*\)|{[^}]*})*\.</string>
+					<key>name</key>
+					<string>markup.other.table.row.selector.textile</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.textile</string>
+						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
